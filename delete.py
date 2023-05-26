@@ -47,17 +47,3 @@ for _ in range(3000):
         # 3 Segundos pra você clicar no unRetweet ou quem sabe 5 minutos
         # pra você implementar o click lá, eu fiquei com preguiça.
         time.sleep(3)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
