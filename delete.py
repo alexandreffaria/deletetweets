@@ -25,28 +25,27 @@ LoginBtn = driver.find_element(By.XPATH,"//span[text()='Log in']")
 LoginBtn.click()
 time.sleep(3)
 
-driver.get("https://twitter.com/alexandreffaria")
+driver.get("https://twitter.com/USERNAME")
+# Usa o de baixo no lugar do de cima pra deletar as replies
+# driver.get("https://twitter.com/USERNAME/with_replies")
 time.sleep(3)
 
-
-for _ in range(3000):
-    # time.sleep(1)
-    
+# Numero de tweets pra deletar
+for _ in range(3000):   
     try:
             
         ellipsisBtn = driver.find_element(By.CSS_SELECTOR, ".css-1dbjc4n.r-1niwhzg.r-sdzlij.r-1p0dtai.r-xoduu5.r-1d2f490.r-xf4iuw.r-1ny4l3l.r-u8s1d.r-zchlnj.r-ipm5af.r-o7ynqc.r-6416eg")
         driver.execute_script("arguments[0].click();", ellipsisBtn)
-        #time.sleep(.2)
 
         deleteBtn = driver.find_element(By.XPATH,"//span[text()='Delete']")
         driver.execute_script("arguments[0].click();", deleteBtn)
-        #time.sleep(.2)
 
         deleteConfirm = driver.find_element(By.XPATH,"//span[text()='Delete']")
         driver.execute_script("arguments[0].click();", deleteConfirm)
-        #time.sleep(.2)
-    
+
     except:
+        # 3 Segundos pra você clicar no unRetweet ou quem sabe 5 minutos
+        # pra você implementar o click lá, eu fiquei com preguiça.
         time.sleep(3)
 
 
