@@ -10,16 +10,19 @@ driver = webdriver.Chrome(executable_path="chromedriver.exe")
 driver.get("https://twitter.com/i/flow/login")
 time.sleep(3)
 
+USERNAME = "Seu usuário"
+PASSWORD = "Sua senha"
+
 loginInput = "label.css-1dbjc4n.r-1roi411.r-z2wwpe.r-rs99b7.r-18u37iz"
 loginInputBtn = driver.find_element(By.CSS_SELECTOR, loginInput)
-loginInputBtn.send_keys("USERNAME")
+loginInputBtn.send_keys(USERNAME)
 
 nextBtn = driver.find_element(By.XPATH,"//span[text()='Next']")
 nextBtn.click()
 time.sleep(3)
 
 passwdInput = driver.find_element(By.CSS_SELECTOR, "input.r-30o5oe.r-1niwhzg.r-17gur6a.r-1yadl64.r-deolkf.r-homxoj.r-poiln3.r-7cikom.r-1ny4l3l.r-t60dpp.r-1dz5y72.r-fdjqy7.r-13qz1uu")
-passwdInput.send_keys("PASSWORD")
+passwdInput.send_keys(PASSWORD)
 
 LoginBtn = driver.find_element(By.XPATH,"//span[text()='Log in']")
 LoginBtn.click()
